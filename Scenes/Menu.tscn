@@ -1,3 +1,44 @@
 [gd_scene format=3 uid="uid://grn7g2sck4ca"]
 
 [node name="Menu" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1153.0
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Panel"]
+layout_mode = 1
+anchor_left = 0.448
+anchor_top = 0.476
+anchor_right = 0.552
+anchor_bottom = 0.756
+offset_left = 59.956
+offset_top = 15.576
+offset_right = -59.9561
+offset_bottom = -166.144
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel/Control"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 150.0
+offset_right = 60.0
+offset_bottom = 180.0
+pivot_offset = Vector2(60, 15)
+
+[node name="Label" type="Label" parent="Panel/Control/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
