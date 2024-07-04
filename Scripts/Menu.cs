@@ -17,6 +17,11 @@ public partial class Menu : Node
 
 	public void NewGameButton()
 	{
-		
+		GetParent().RemoveChild(this);
+	}
+
+	public void ExitButton()
+	{
+		GetTree().Quit();
 	}
 }

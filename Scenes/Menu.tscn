@@ -1,8 +1,10 @@
-[gd_scene format=3 uid="uid://grn7g2sck4ca"]
+[gd_scene load_steps=2 format=3 uid="uid://grn7g2sck4ca"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.cs" id="1_mleq6"]
 
 [node name="Menu" type="Node2D"]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Main Menu" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,7 +13,7 @@ offset_bottom = 649.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="Panel"]
+[node name="Control" type="Control" parent="Main Menu"]
 layout_mode = 1
 anchor_left = 0.448
 anchor_top = 0.476
@@ -24,21 +26,66 @@ offset_bottom = -166.144
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Panel/Control"]
+[node name="Button2" type="Button" parent="Main Menu/Control"]
+layout_mode = 0
+offset_left = -60.4999
+offset_top = 31.5
+offset_right = 59.5001
+offset_bottom = 61.5
+pivot_offset = Vector2(60, 15)
+text = "New Game"
+script = ExtResource("1_mleq6")
+
+[node name="Button" type="Button" parent="Main Menu/Control"]
 layout_mode = 0
 offset_left = -60.0
 offset_top = 150.0
 offset_right = 60.0
 offset_bottom = 180.0
 pivot_offset = Vector2(60, 15)
+text = "Quit"
+script = ExtResource("1_mleq6")
 
-[node name="Label" type="Label" parent="Panel/Control/Button"]
-layout_mode = 1
-anchors_preset = -1
+[node name="New Game" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1153.0
+offset_bottom = 649.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Exit"
-horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="Control" type="Control" parent="New Game"]
+layout_mode = 1
+anchor_left = 0.448
+anchor_top = 0.476
+anchor_right = 0.552
+anchor_bottom = 0.756
+offset_left = 59.956
+offset_top = 15.576
+offset_right = -59.9561
+offset_bottom = -166.144
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button2" type="Button" parent="New Game/Control"]
+layout_mode = 0
+offset_left = 59.5001
+offset_top = 262.5
+offset_right = 179.5
+offset_bottom = 292.5
+pivot_offset = Vector2(60, 15)
+text = "Start"
+script = ExtResource("1_mleq6")
+
+[node name="Button" type="Button" parent="New Game/Control"]
+layout_mode = 0
+offset_left = -216.5
+offset_top = 262.5
+offset_right = -96.4999
+offset_bottom = 292.5
+pivot_offset = Vector2(60, 15)
+text = "Back"
+
+[connection signal="pressed" from="Main Menu/Control/Button2" to="Main Menu/Control/Button2" method="NewGameButton"]
